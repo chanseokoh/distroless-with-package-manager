@@ -152,6 +152,6 @@ RUN groupadd -g 8 mail && groupadd -g 43 utmp
 
 # This won't reduce the size of the built image. Do 'docker build --squash' to
 # free up the size by shrinking multiple layers into one.
-RUN rm /*.deb
+RUN rm -rf /*.deb /usr/share/man /usr/share/doc
 
 ENTRYPOINT ["/bin/sh"]
