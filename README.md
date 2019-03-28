@@ -39,11 +39,11 @@ ii  at-spi2-core                  2.22.0-6+deb9u1        amd64        Assistive 
 ii  ca-certificates               20161130+nmu1+deb9u1   all          Common CA certificates
 ```
 
-However, the size is not much different from `ubuntu:18.04` (although smaller than `debian:stretch`), so honestly, there is not much reason to favor Distroless+APT to Ubuntu given that both have a shell and a package manager.
+However, the size is only slightly smaller from `ubuntu:18.04` (although more than 20% smaller than `debian:stretch`), so there may not be much reason to favor Distroless+APT to Ubuntu.
 
 ```
 REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
-distroless-apt           latest              1d17f6f81099        6 minutes ago       85.1MB
+distroless-apt           latest              8e5b07028d68        6 seconds ago       78.5MB
 debian                   stretch             2d337f242f07        2 days ago          101MB
 ubuntu                   18.04               94e814e2efa8        2 weeks ago         88.9MB
 ```
