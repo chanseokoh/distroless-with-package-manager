@@ -1,0 +1,6 @@
+Package: libc6
+Status: install ok installed
+Version: 2.24-11+deb9u4
+Architecture: amd64
+Maintainer: GNU Libc Maintainers <debian-glibc@lists.debian.org>
+Description: GNU C Library: Shared libraries
