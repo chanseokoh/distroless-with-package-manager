@@ -1,5 +1,6 @@
-# Distroless+APT
-Distroless base image with the package manager (`dpkg` and `apt`) installed
+# [Distroless](https://github.com/GoogleContainerTools/distroless)+APT
+
+[Distroless](https://github.com/GoogleContainerTools/distroless) base Docker image with a package manager (`dpkg` and `apt`) installed
 
 **Use --squash when building the image to reduce size and layers.**
 
@@ -39,7 +40,7 @@ ii  at-spi2-core                  2.22.0-6+deb9u1        amd64        Assistive 
 ii  ca-certificates               20161130+nmu1+deb9u1   all          Common CA certificates
 ```
 
-However, the size is only slightly smaller from `ubuntu:18.04` (although more than 20% smaller than `debian:stretch`), so there may not be much reason to favor Distroless+APT to Ubuntu.
+However, the size is only slightly smaller than `ubuntu:18.04` (although more than 20% smaller than `debian:stretch`), so there may not be much reason to favor Distroless+APT over Ubuntu.
 
 ```
 REPOSITORY               TAG                 IMAGE ID            CREATED             SIZE
