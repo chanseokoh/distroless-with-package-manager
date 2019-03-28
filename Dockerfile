@@ -12,6 +12,7 @@ RUN apt-get update && apt-get install -y -q wget
 RUN mkdir /for-copy
 WORKDIR /for-copy
 
+# You can use a different mirror than ftp.us.debian.org, if desired.
 RUN wget http://ftp.us.debian.org/debian/pool/main/g/gcc-6/gcc-6-base_6.3.0-18+deb9u1_amd64.deb \
  && wget http://ftp.us.debian.org/debian/pool/main/g/gcc-6/libgcc1_6.3.0-18+deb9u1_amd64.deb \
  && wget http://ftp.us.debian.org/debian/pool/main/g/gcc-6/libstdc++6_6.3.0-18+deb9u1_amd64.deb \
@@ -54,6 +55,8 @@ RUN wget http://ftp.us.debian.org/debian/pool/main/g/gcc-6/gcc-6-base_6.3.0-18+d
  && wget http://ftp.us.debian.org/debian/pool/main/d/dpkg/dpkg_1.18.25_amd64.deb
 
 # libbz2-1.0 liblzma5 zlib1g libselinux1 libacl1 libattr1 libtinfo5 libpcre3
+# Required to run dpkg. These will be re-installed later from actual packages
+# to have proper install status managed by dpkg.
 RUN cp --preserve=links --parents /lib/x86_64-linux-gnu/libbz2.so.1* \
                                   /lib/x86_64-linux-gnu/liblzma.so.5* \
                                   /lib/x86_64-linux-gnu/libz.so.1* \
@@ -64,6 +67,7 @@ RUN cp --preserve=links --parents /lib/x86_64-linux-gnu/libbz2.so.1* \
                                   /lib/x86_64-linux-gnu/libpcre.so.3* \
                                   /usr/lib/x86_64-linux-gnu/libpcreposix.so.3* .
 
+# tar will be re-installed later from an actual package.
 # TODO: use dash instead of bash. I've come across one package
 # (ca-certificate-java) whose post-install script is written in a non-portable
 # way. If Debian fixes such package problems, we should be able to use dash.
@@ -114,7 +118,7 @@ RUN dpkg -i gcc-6-base_6.3.0-18+deb9u1_amd64.deb \
  && dpkg -i liblzma5_5.2.2-1.2+b1_amd64.deb \
  && dpkg -i libbz2-1.0_1.0.6-8.1_amd64.deb \
  && dpkg -i tar_1.29b-1.1_amd64.deb \
- && dpkg -i dpkg_1.18.25_amd64.deb
+ && dpkg -i dpkg_1.18.25_amd64.deb # installing itself using itself
 
 # Install apt using dpkg.
 RUN dpkg -i libstdc++6_6.3.0-18+deb9u1_amd64.deb \
