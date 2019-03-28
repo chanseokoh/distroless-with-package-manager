@@ -26,7 +26,17 @@ sh-4.4# java -version
 openjdk version "1.8.0_212"
 OpenJDK Runtime Environment (build 1.8.0_212-8u212-b01-1~deb9u1-b01)
 OpenJDK 64-Bit Server VM (build 25.212-b01, mixed mode)
-sh-4.4# 
+sh-4.4# dpkg -l | head -10
+Desired=Unknown/Install/Remove/Purge/Hold
+| Status=Not/Inst/Conf-files/Unpacked/halF-conf/Half-inst/trig-aWait/Trig-pend
+|/ Err?=(none)/Reinst-required (Status,Err: uppercase=bad)
+||/ Name                          Version                Architecture Description
++++-=============================-======================-============-========================================================================
+ii  adduser                       3.115                  all          add and remove users and groups
+ii  adwaita-icon-theme            3.22.0-1+deb9u1        all          default icon theme of GNOME
+ii  apt                           1.4.9                  amd64        commandline package manager
+ii  at-spi2-core                  2.22.0-6+deb9u1        amd64        Assistive Technology Service Provider Interface (dbus core)
+ii  ca-certificates               20161130+nmu1+deb9u1   all          Common CA certificates
 ```
 
 However, the size is not much different from `ubuntu:18.04` (although smaller than `debian:stretch`), so honestly, there is not much reason to favor Distroless+APT to Ubuntu given that both have a shell and a package manager.
