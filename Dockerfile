@@ -93,6 +93,8 @@ RUN mkdir -p var/lib/dpkg/updates var/lib/dpkg/info var/lib/dpkg/alternatives et
 # Make dpkg believe libc6 is installed.
 COPY fake-dpkg-status var/lib/dpkg/status
 
+RUN mkdir -p usr/local
+
 #
 # Step 2: gcr.io/distroless/base
 #
