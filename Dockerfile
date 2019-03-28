@@ -151,7 +151,7 @@ RUN dpkg -i libstdc++6_6.3.0-18+deb9u1_amd64.deb \
 RUN groupadd -g 8 mail && groupadd -g 43 utmp
 
 # This won't reduce the size of the built image. Do 'docker build --squash' to
-# free up the size by shrinking the image into one layer.
+# free up the size by shrinking multiple layers into one.
 RUN rm /*.deb
 
 ENTRYPOINT ["/bin/sh"]
