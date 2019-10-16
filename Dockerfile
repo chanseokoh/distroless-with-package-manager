@@ -23,7 +23,7 @@ RUN wget http://ftp.us.debian.org/debian/pool/main/g/gcc-6/gcc-6-base_6.3.0-18+d
  && wget http://ftp.us.debian.org/debian/pool/main/libg/libgpg-error/libgpg-error0_1.26-2_amd64.deb \
  && wget http://ftp.us.debian.org/debian/pool/main/libg/libgcrypt20/libgcrypt20_1.7.6-2+deb9u3_amd64.deb \
  && wget http://ftp.us.debian.org/debian/pool/main/g/gnupg2/gpgv_2.1.18-8~deb9u4_amd64.deb \
- && wget http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2017.5_all.deb \
+ && wget http://ftp.us.debian.org/debian/pool/main/d/debian-archive-keyring/debian-archive-keyring_2017.5~deb8u1_all.deb \
  && wget http://ftp.us.debian.org/debian/pool/main/d/debconf/debconf_1.5.61_all.deb \
  && wget http://ftp.us.debian.org/debian/pool/main/a/audit/libaudit-common_2.6.7-2_all.deb \
  && wget http://ftp.us.debian.org/debian/pool/main/libc/libcap-ng/libcap-ng0_0.7.7-3+b1_amd64.deb \
@@ -131,7 +131,7 @@ RUN dpkg -i libstdc++6_6.3.0-18+deb9u1_amd64.deb \
  && dpkg -i libgpg-error0_1.26-2_amd64.deb \
  && dpkg -i libgcrypt20_1.7.6-2+deb9u3_amd64.deb \
  && dpkg -i gpgv_2.1.18-8~deb9u4_amd64.deb \
- && dpkg -i debian-archive-keyring_2017.5_all.deb \
+ && dpkg -i debian-archive-keyring_2017.5~deb8u1_all.deb \
  && dpkg -i debconf_1.5.61_all.deb \
  && dpkg -i libaudit-common_2.6.7-2_all.deb \
  && dpkg -i libcap-ng0_0.7.7-3+b1_amd64.deb \
